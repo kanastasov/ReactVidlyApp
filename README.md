@@ -1,3 +1,6 @@
+###  React application that consumes movies services and display them into table.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
