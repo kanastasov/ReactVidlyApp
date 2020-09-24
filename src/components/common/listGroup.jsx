@@ -2,7 +2,7 @@ import React from 'react';
 
 const ListGroup = props => {
     const { items, textProperty, valueProperty, selectedItem, onItemSelect } = props;
-    return  <ul className="list-group">
+    return ( <ul className="list-group">
         {items.map(item => 
         <li 
          onClick={() => onItemSelect(item)}
@@ -12,7 +12,7 @@ const ListGroup = props => {
          {item[textProperty]}
         </li>)}
     
-    </ul>;
+    </ul>);
 };
 
 ListGroup.defaultProps = {
