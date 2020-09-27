@@ -8,7 +8,7 @@ import Rentals from "./components/rentals";
 import NotFound from "./components/notFound";
 import NavBar from "./components/navBar";
 import LoginForm from "./components/loginForm";
-import RegisterForm from "./components/registerForm";
+import RegisterForm from './components/registerForm';
 import "./App.css";
 import 'react-toastify/dist/ReactToastify.css';
 
