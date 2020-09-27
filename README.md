@@ -1,4 +1,4 @@
-###  React application that consumes movies services and display them into table. Use MongoDb and deploed to Heroku Server.
+###  React application that consumes movies services and display them into table. Uses MongoDb and deploed to Heroku Server.
 
 
 
