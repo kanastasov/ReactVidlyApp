@@ -13,6 +13,7 @@ import "./App.css";
 import 'react-toastify/dist/ReactToastify.css';
 import jwtDecode from 'jwt-decode';
 import Logout from "./components/logout";
+import auth from './services/authService';
 
  
 
@@ -20,15 +21,8 @@ class App extends Component {
   state = {};
 
   componentDidMount() {
-    try {
-      const jwt = localStorage.getItem("token");
-      const user = jwtDecode(jwt);
-      this.setState({user});
-      console.log(user);
-    } catch (ex) {
-      
-    }
-  
+    const user = auth.getCurrentUser();
+    this.setState({user});
   }
 
   render() {
