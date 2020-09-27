@@ -4,6 +4,7 @@ import Form from './common/form';
 import auth from '../services/authService';
 import { Redirect } from 'react-router-dom';
 
+
 class LoginForm extends Form {
 
     state= {
@@ -21,7 +22,7 @@ class LoginForm extends Form {
             await auth.login(data.username, data.password);   
             const {state} = this.props.location;
             window.location= state ? state.from.pathname : '/';
-            console.log(jwt);      
+              
         } catch (ex) {
            if(ex.response && ex.response.status ===400) {
                const errors = {... this.state.errors};
