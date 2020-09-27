@@ -9,10 +9,12 @@ import NotFound from "./components/notFound";
 import NavBar from "./components/navBar";
 import LoginForm from "./components/loginForm";
 import RegisterForm from './components/registerForm';
-import "./App.css";
-import 'react-toastify/dist/ReactToastify.css';
 import Logout from "./components/logout";
 import auth from './services/authService';
+import ProtectedRoute from "./components/common/protectedRoute";
+import "./App.css";
+import 'react-toastify/dist/ReactToastify.css';
+
 
  
 
@@ -25,16 +27,20 @@ class App extends Component {
   }
 
   render() {
+    const { user } = this.state;
     return (
       <React.Fragment>
         <ToastContainer/>
-        <NavBar user={this.state.user} />
+        <NavBar user={user} />
         <main className="container">
           <Switch>
-            <Route path="/register" component={RegisterForm} />
+            <Route path="/register" component= {RegisterForm} />
             <Route path="/logout" component={Logout} />
             <Route path="/login" component={LoginForm} />
-            <Route path="/movies/:id" component={MovieForm} />
+            <ProtectedRoute 
+            path="/movies/:id"
+            component={MovieForm} 
+            />
             <Route path="/movies" 
                render={props => <Movies {...props} user={this.state.user} />} />
             <Route path="/customers" component={Customers} />
