@@ -11,13 +11,30 @@ import LoginForm from "./components/loginForm";
 import RegisterForm from './components/registerForm';
 import "./App.css";
 import 'react-toastify/dist/ReactToastify.css';
+import jwtDecode from 'jwt-decode';
+
+ 
 
 class App extends Component {
+  state = {};
+
+  componentDidMount() {
+    try {
+      const jwt = localStorage.getItem("token");
+      const user = jwtDecode(jwt);
+      this.setState({user});
+      console.log(user);
+    } catch (ex) {
+      
+    }
+  
+  }
+
   render() {
     return (
       <React.Fragment>
         <ToastContainer/>
-        <NavBar />
+        <NavBar user={this.state.user} />
         <main className="container">
           <Switch>
             <Route path="/register" component={RegisterForm} />
