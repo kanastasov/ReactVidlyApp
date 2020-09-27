@@ -12,6 +12,8 @@ import RegisterForm from './components/registerForm';
 import "./App.css";
 import 'react-toastify/dist/ReactToastify.css';
 import jwtDecode from 'jwt-decode';
+import Logout from "./components/logout";
+import auth from './services/authService';
 
  
 
@@ -19,15 +21,8 @@ class App extends Component {
   state = {};
 
   componentDidMount() {
-    try {
-      const jwt = localStorage.getItem("token");
-      const user = jwtDecode(jwt);
-      this.setState({user});
-      console.log(user);
-    } catch (ex) {
-      
-    }
-  
+    const user = auth.getCurrentUser();
+    this.setState({user});
   }
 
   render() {
@@ -38,6 +33,7 @@ class App extends Component {
         <main className="container">
           <Switch>
             <Route path="/register" component={RegisterForm} />
+            <Route path="/logout" component={Logout} />
             <Route path="/login" component={LoginForm} />
             <Route path="/movies/:id" component={MovieForm} />
             <Route path="/movies" component={Movies} />
