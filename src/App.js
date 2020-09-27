@@ -12,6 +12,7 @@ import RegisterForm from './components/registerForm';
 import "./App.css";
 import 'react-toastify/dist/ReactToastify.css';
 import jwtDecode from 'jwt-decode';
+import Logout from "./components/logout";
 
  
 
@@ -38,6 +39,7 @@ class App extends Component {
         <main className="container">
           <Switch>
             <Route path="/register" component={RegisterForm} />
+            <Route path="/logout" component={Logout} />
             <Route path="/login" component={LoginForm} />
             <Route path="/movies/:id" component={MovieForm} />
             <Route path="/movies" component={Movies} />
