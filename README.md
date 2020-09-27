@@ -1,4 +1,8 @@
-###  React application that consumes movies services and display them into table.
+###  React application that consumes movies services and display them into table. Use MongoDb and deploed to Heroku Server.
+
+
+
+![img](https://user-images.githubusercontent.com/755058/94365913-50e6af80-00dd-11eb-896a-bcaec515c068.png)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
